@@ -23,29 +23,54 @@
         let work_flow_img_height = $("#work_flow_img").height()
         function icon_pos(element_name,pos_x,pos_y,el_width){
             $(element_name).css({
-                "top":work_flow_img_height*(pos_y/1776),
+                "top":work_flow_img_height*(pos_y/2059),
                 "left":work_flow_img_width*(pos_x/2421),
                 "width":(work_flow_img_width/2421)*el_width,
             }).show()
             console.log(element_name)
         }
-        function icon_display(){
+        let pageTimer = {} ;
+        function icon_display(flg){
+            // $(".icons").hide()
+            for(var each in pageTimer){
+                clearInterval(pageTimer[each]);
+            }
+
+            console.log('flag',flg)
             setTimeout(function () {
-                icon_pos("#pc_icon",95,680,170)
+                icon_pos("#pc_icon",96,681,170)
             },1)
-            setInterval(function () {$("#pc_icon").toggle("normal") },1000)
+            pageTimer["timer1"]=setInterval(function () {$("#pc_icon").toggle("normal") },1000)
 
 
-            setTimeout(function () {icon_pos("#server_icon",508,745,220)},1000)
-            setInterval(function () {$("#server_icon").toggle("normal") },1000)
+            setTimeout(function () {icon_pos("#server_icon",508,746,220)},1000)
+            pageTimer["timer2"]=setInterval(function () {$("#server_icon").toggle("normal") },1000)
 
-            setTimeout(function () {icon_pos("#feign_icon",975,720,675)},2000)
-            setInterval(function () {$("#feign_icon").toggle("normal") },1000)
+            setTimeout(function () {icon_pos("#ecn_icon",573,230,310)},2000)
+            pageTimer["timer3"]=setInterval(function () {$("#ecn_icon").toggle("normal") },1000)
 
-            //todo rs icon
+            setTimeout(function () {icon_pos("#rmq_icon",1226,1465,160)},3000)
+            pageTimer["timer4"]=setInterval(function () {$("#rmq_icon").toggle("normal") },1000)
 
-            setTimeout(function () {icon_pos("#sql_icon",1547,1430,575)},5000)
-            setInterval(function () {$("#sql_icon").toggle("normal") },1000)
+            if(flg==1){
+                setTimeout(function () {icon_pos("#re_icon4",800,1773,60)},4000)
+                pageTimer["timer5"]=setInterval(function () {$("#re_icon4").toggle("normal") },1000)
+                setTimeout(function () {icon_pos("#re_icon5",926,1773,60)},5000)
+                pageTimer["timer6"]=setInterval(function () {$("#re_icon5").toggle("normal") },1000)
+                setTimeout(function () {icon_pos("#re_icon6",1052,1773,60)},6000)
+                pageTimer["timer7"]=setInterval(function () {$("#re_icon6").toggle("normal") },1000)
+            }
+
+            if(flg==2){
+                setTimeout(function () {icon_pos("#re_icon1",1280,1773,60)},4000)
+                pageTimer["timer8"]=setInterval(function () {$("#re_icon1").toggle("normal") },1000)
+                setTimeout(function () {icon_pos("#re_icon2",1412,1773,60)},5000)
+                pageTimer["timer9"]=setInterval(function () {$("#re_icon2").toggle("normal") },2000)
+                setTimeout(function () {icon_pos("#re_icon3",1537,1773,60)},6000)
+                pageTimer["timer10"]=setInterval(function () {$("#re_icon3").toggle("normal") },3000)
+            }
+            setTimeout(function () {icon_pos("#sql_icon",1547,1430,575)},7000)
+            pageTimer["timer11"]=setInterval(function () {$("#sql_icon").toggle("normal") },1000)
 
 
         }
@@ -53,7 +78,10 @@
 
         // user button
         $("#user-demo button").click(function(){
-            icon_display();
+            $(".icons").hide()
+            // $(".icons").css('width',0)
+
+            icon_display(1);
             let url_user ="http://127.0.0.1:5000/topN/"+ $("#username").val();
             console.log('topN')
             $.ajax({
@@ -76,7 +104,10 @@
         });
         // item button
         $("#item-demo button").click(function(){
-            // icon_display();
+            // $(".icons").removeAttr('style').hide()
+            $(".icons").hide()
+
+            icon_display(2);
 
             let url_item ="http://127.0.0.1:5000/knn/"+ $("#item_name").val();
 
