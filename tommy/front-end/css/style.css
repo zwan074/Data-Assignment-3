@@ -1,5 +1,5 @@
 .red{background: red}
-.green{background: green}
+/*.green{background: green}*/
 
 .center{
     margin: 0 auto;
@@ -57,7 +57,26 @@
 
 /*===*/
 #user-rem-box,#item-rem-box{
-    display: none;
+    /*display: none;*/
     transition-timing-function: ease-in-out;
 
+}
+/*== work flow ==*/
+.imgs-box{
+    position: relative;
+}
+.imgs-box .icons{
+    /*background: red;*/
+    position: absolute;
+    width: 0;
+    height: 0;
+    /*visibility: hidden;*/
+    /*display: none;*/
+    /*top:100px;*/
+    /*left:100px;*/
+    /*transition-timing-function: ease-in-out;*/
+
+}
+.imgs-box .icons{
+   margin: 0 auto;
 }
