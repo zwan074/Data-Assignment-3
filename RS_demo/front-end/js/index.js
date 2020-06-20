@@ -2,7 +2,7 @@
 
 (function () {
     let display_flag=0;
-
+    let flicker=100;
     function control_display(){
         if(display_flag==1){
             $("#user-rem-box").delay(1000).fadeIn(800,"linear");
@@ -39,90 +39,90 @@
             console.log('flag',flg)
             setTimeout(function () {
                 icon_pos("#pc_icon",96,681,170)
-                $("#pc_icon").delay(200).toggle("fast")
+                $("#pc_icon").delay(flicker).toggle("fast")
                 $("#pc_icon").toggle("fast")
-                $("#pc_icon").delay(200).toggle("fast")
+                $("#pc_icon").delay(flicker).toggle("fast")
                 $("#pc_icon").toggle("fast")
-                $("#pc_icon").delay(200).toggle("fast")
+                $("#pc_icon").delay(flicker).toggle("fast")
             },1)
 
             setTimeout(function () {
                 icon_pos("#server_icon",508,746,220)
-                $("#server_icon").delay(200).toggle("fast")
+                $("#server_icon").delay(flicker).toggle("fast")
                 $("#server_icon").toggle("fast")
-                $("#server_icon").delay(200).toggle("fast")
+                $("#server_icon").delay(flicker).toggle("fast")
                 $("#server_icon").toggle("fast")
-                $("#server_icon").delay(200).toggle("fast")
+                $("#server_icon").delay(flicker).toggle("fast")
             },2000)
 
             setTimeout(function () {icon_pos("#ecn_icon",573,230,310)
-                $("#ecn_icon").delay(200).toggle("fast")
+                $("#ecn_icon").delay(flicker).toggle("fast")
                 $("#ecn_icon").toggle("fast")
-                $("#ecn_icon").delay(200).toggle("fast")
+                $("#ecn_icon").delay(flicker).toggle("fast")
                 $("#ecn_icon").toggle("fast")
-                $("#ecn_icon").delay(200).toggle("fast")},4000)
+                $("#ecn_icon").delay(flicker).toggle("fast")},4000)
 
             setTimeout(function () {icon_pos("#rmq_icon",1226,1465,160)
-                $("#rmq_icon").delay(200).toggle("fast")
+                $("#rmq_icon").delay(flicker).toggle("fast")
                 $("#rmq_icon").toggle("fast")
-                $("#rmq_icon").delay(200).toggle("fast")
+                $("#rmq_icon").delay(flicker).toggle("fast")
                 $("#rmq_icon").toggle("fast")
-                $("#rmq_icon").delay(200).toggle("fast")},6000)
+                $("#rmq_icon").delay(flicker).toggle("fast")},6000)
 
-            if(flg==1){
-                let icon_id =Math.floor( Math.random()*4+1);
+            if(flg==2){
+                let icon_id =Math.floor( Math.random()*3+1);
                 console.log("icon_id",icon_id)
                 // let icon_name ="#re_icon"+icon_id
                 // console.log("icon_name",icon_name)
                 if(icon_id==1){
                     setTimeout(function () {icon_pos("#re_icon4",800,1773,60)
-                        $("#re_icon4").delay(200).toggle("fast")
+                        $("#re_icon4").delay(flicker).toggle("fast")
                         $("#re_icon4").toggle("fast")
-                        $("#re_icon4").delay(200).toggle("fast")
+                        $("#re_icon4").delay(flicker).toggle("fast")
                         $("#re_icon4").toggle("fast")
-                        $("#re_icon4").delay(200).toggle("fast")},8000)
+                        $("#re_icon4").delay(flicker).toggle("fast")},8000)
                 }else if(icon_id==2){
                     setTimeout(function () {icon_pos("#re_icon5",926,1773,60)
-                        $("#re_icon5").delay(200).toggle("fast")
+                        $("#re_icon5").delay(flicker).toggle("fast")
                         $("#re_icon5").toggle("fast")
-                        $("#re_icon5").delay(200).toggle("fast")
+                        $("#re_icon5").delay(flicker).toggle("fast")
                         $("#re_icon5").toggle("fast")
-                        $("#re_icon5").delay(200).toggle("fast")},8000)
+                        $("#re_icon5").delay(flicker).toggle("fast")},8000)
                 }else if(icon_id==3){
                     setTimeout(function () {icon_pos("#re_icon6",1052,1773,60)
-                        $("#re_icon6").delay(200).toggle("fast")
+                        $("#re_icon6").delay(flicker).toggle("fast")
                         $("#re_icon6").toggle("fast")
-                        $("#re_icon6").delay(200).toggle("fast")
+                        $("#re_icon6").delay(flicker).toggle("fast")
                         $("#re_icon6").toggle("fast")
-                        $("#re_icon6").delay(200).toggle("fast")},8000)
+                        $("#re_icon6").delay(flicker).toggle("fast")},8000)
                 }
             }
 
-            if(flg==2){
-                let icon_id =Math.floor( Math.random()*4+1);
+            if(flg==1){
+                let icon_id =Math.floor( Math.random()*3+1);
                 console.log("icon_id",icon_id)
                 // let icon_name ="#re_icon"+icon_id
                 if(icon_id==1){
                     setTimeout(function () {icon_pos("#re_icon1",1280,1773,60)
-                        $("#re_icon1").delay(200).toggle("fast")
+                        $("#re_icon1").delay(flicker).toggle("fast")
                         $("#re_icon1").toggle("fast")
-                        $("#re_icon1").delay(200).toggle("fast")
+                        $("#re_icon1").delay(flicker).toggle("fast")
                         $("#re_icon1").toggle("fast")
-                        $("#re_icon1").delay(200).toggle("fast")},8000)
+                        $("#re_icon1").delay(flicker).toggle("fast")},8000)
                 }else if(icon_id==2){
                     setTimeout(function () {icon_pos("#re_icon2",1412,1773,60)
-                        $("#re_icon2").delay(200).toggle("fast")
+                        $("#re_icon2").delay(flicker).toggle("fast")
                         $("#re_icon2").toggle("fast")
-                        $("#re_icon2").delay(200).toggle("fast")
+                        $("#re_icon2").delay(flicker).toggle("fast")
                         $("#re_icon2").toggle("fast")
-                        $("#re_icon2").delay(200).toggle("fast")},8000)
+                        $("#re_icon2").delay(flicker).toggle("fast")},8000)
                 }else if(icon_id==3){
                     setTimeout(function () {icon_pos("#re_icon3",1537,1773,60)
-                        $("#re_icon3").delay(200).toggle("fast")
+                        $("#re_icon3").delay(flicker).toggle("fast")
                         $("#re_icon3").toggle("fast")
-                        $("#re_icon3").delay(200).toggle("fast")
+                        $("#re_icon3").delay(flicker).toggle("fast")
                         $("#re_icon3").toggle("fast")
-                        $("#re_icon3").delay(200).toggle("fast")},8000)
+                        $("#re_icon3").delay(flicker).toggle("fast")},8000)
                 }
 
             }

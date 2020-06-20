@@ -85,3 +85,9 @@
 .imgs-box .icons{
    margin: 0 auto;
 }
+
+.imgs-box .img-fluid {
+    /*max-width: 90%;*/
+    max-width: 100%;
+    height: auto;
+}
